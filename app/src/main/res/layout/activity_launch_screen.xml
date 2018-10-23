@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="ww.www.www.login_with_pin_code.LaunchScreen">
+
+    <TextView
+        android:id="@+id/Text_View_Language_Select"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:text="@string/text_select_language"
+        android:textSize="24sp" />
+
+    <RadioGroup
+        android:id="@+id/Radio_Group_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/Text_View_Language_Select"
+        android:layout_centerHorizontal="true"
+        android:checkedButton="@+id/Radio_Button_English"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/Radio_Button_English"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/text_english" />
+
+        <RadioButton
+            android:id="@+id/Radio_Button_Hungarian"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/text_hungarian" />
+
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/Button_Select_Language_Proceed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/Radio_Group_1"
+        android:layout_centerHorizontal="true"
+        android:onClick="whichLanguageSelected"
+        android:text="@string/text_proceed" />
+
+</RelativeLayout>

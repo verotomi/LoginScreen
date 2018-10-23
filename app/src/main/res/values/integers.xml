@@ -1,0 +1,4 @@
+<resources>
+    <integer name="timeToWait">5</integer>
+    <integer name="maxWrongAttempts">3</integer>
+</resources>

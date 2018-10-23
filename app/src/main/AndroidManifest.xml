@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="ww.www.www.login_with_pin_code">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/loginscreen"
+        android:label="Login screen"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity" android:parentActivityName=".LaunchScreen"/> <!-- a parent kell ahhoz, hogy megjelenjen a visszanyíl a gyerek activity-knél -->
+        <activity android:name=".LaunchScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" /><!-- ez jelzi, hogy ez a kezdőképernyő-->
+
+                <category android:name="android.intent.category.LAUNCHER" /><!-- ez jelzi, hogy ez a kezdőképernyő-->
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

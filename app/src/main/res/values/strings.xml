@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">login-with-pin-code</string>
+    <string name="text_enter">Enter</string>
+    <string name="text_enter_pin_code">Enter PIN code!</string>
+    <string name="text_not_logged_in">You are NOT logged in!</string>
+    <string name="text_logged_in">You are logged in!</string>
+    <string name="text_wrong_pin_code">Wrong PIN code!</string>
+    <string name="text_logout">Log out</string>
+    <string name="text_pin_code_rule">PIN code must be between 4 and 6 digits!</string>
+    <string name="text_banned_1">You have to wait "</string>
+    <string name="text_banned_2"> seconds!"</string>
+    <string name="text_Copyright">© 2018 - Verovszki Tamás"</string>
+    <string name="text_select_language">Select language:</string>
+    <string name="text_english">English</string>
+    <string name="text_hungarian">magyar</string>
+    <string name="text_proceed">Proceed</string>
+    <string name="app_label">Login screen</string>
+</resources>

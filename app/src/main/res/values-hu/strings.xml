@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Belépés PIN kóddal</string>
+    <string name="text_enter">Mehet</string>
+    <string name="text_enter_pin_code">Kérem a PIN kódot!</string>
+    <string name="text_not_logged_in">Ön NINCS bejelentkezve!</string>
+    <string name="text_logged_in">Ön be van jelentkezve!</string>
+    <string name="text_wrong_pin_code">Hibás PIN kód!</string>
+    <string name="text_logout">Kijelentkezés</string>
+    <string name="text_pin_code_rule">A PIN kód hossza 4 és 6 számjegy közötti!</string>
+    <string name="text_banned_1">Várnia kell "</string>
+    <string name="text_banned_2"> másodpercet!"</string>
+    <string name="text_Copyright">© 2018 - Verovszki Tamás"</string>
+    <string name="text_select_language">Váálasszon nyelvet:</string>
+    <string name="text_english">English</string>
+    <string name="text_hungarian">magyar</string>
+    <string name="text_proceed">Tovább</string>
+    <string name="app_label">Bejelentkezés</string>
+</resources>

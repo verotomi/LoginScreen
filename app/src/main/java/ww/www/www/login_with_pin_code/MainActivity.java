@@ -14,7 +14,6 @@ import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
@@ -72,8 +71,8 @@ public class MainActivity extends AppCompatActivity {
 
         /* ebben a metódusban nem működött a Text_View_Dialogue szöveg-módosítása. Nem volt fordítási hiba, de futás közben leállt a program, érdemleges hibaüzenet nélkül.
             Úgy sikerült megoldanom, hogy elé raktam a "MainActivity."-t így: MainActivity.Text_View_Dialogue.setText("..."). Így már alá lettt húzva pirossal, Alt+Enterrel
-            static-ká tettem a Text_View_Dialogue-t. Ezek után az elejéről elhagytam a "MainActivity."-t. Úgy véltem, felesleges oda. Ez az egész ötlet magamtól jött, nem
-            kerestem rá google-n, viszont nem igazán értem, hogy miért kellett static-ra állítani?
+            static-ká tettem a Text_View_Dialogue-t. Ezek után az elejéről elhagytam a "MainActivity."-t. Úgy véltem, felesleges oda.
+            Viszont nem igazán értem, hogy miért kellett static-ra állítani?
             UPDATE!!! Erre a fenti staticos dologra nincs szükség, enélkül is megy. Nem töröltem a megjegyzésemet, hátra jó lesz még valamire */
 
         /* ez sem működik, itt sincs visszaszámlálás :(
@@ -118,7 +117,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Intent intent = getIntent();
-        String selectedLanguage = intent.getStringExtra(LaunchScreen.EXTRA_MESSAGE); // nem is kell átadni a lokalizáció választást, meg lehet oldani a kezdőlapon is. Ettől függetlenül itt hagyom, hátha jó lesz még valamire.
+        String selectedLanguage = intent.getStringExtra(LaunchScreen.sentParameters); // végül nem is kell átadni a lokalizáció választást, meg tudom oldani a kezdőlapon is. Ettől függetlenül itt hagyom, hátha jó lesz még valamire.
         init();
 
         // Toast.makeText(this, "Test: pincode variable's length is:" + enteredPincode.length(), Toast.LENGTH_SHORT).show(); // Teszthez kellett!! Csak a változót nem tudtam Toast-olni, elé kellett írni valami stringet!

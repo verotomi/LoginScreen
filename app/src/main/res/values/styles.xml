@@ -13,10 +13,30 @@
         <item name="android:textStyle">bold</item>
         <item name="android:textColor">@color/white</item>
         <item name="android:background">@drawable/roundedbutton_green</item>
-        <!--buttonnál nem működik :( item name="android:shadowColor">#222222</item>
-        <item name="android:shadowDx">10</item>
-        <item name="android:shadowDy">10</item>
-        <item name="android:shadowRadius">20</item-->
+        <item name="android:shadowRadius">10</item>
+        <item name="android:shadowDy">3</item>
+        <item name="android:shadowDx">3</item>
+        <item name="android:shadowColor">@color/darkGrey</item>
     </style>
-    
+
+    <style name="Shadow_Middle_Dark">
+        <item name="android:shadowRadius">10</item>
+        <item name="android:shadowDy">3</item>
+        <item name="android:shadowDx">3</item>
+        <item name="android:shadowColor">@color/darkGrey</item>
+    </style>
+
+    <style name="Shadow_Small_Dark">
+        <item name="android:shadowRadius">4</item>
+        <item name="android:shadowDy">2</item>
+        <item name="android:shadowDx">2</item>
+        <item name="android:shadowColor">@color/darkGrey</item>
+    </style>
+    <style name="Shadow_Middle_Light">
+        <item name="android:shadowRadius">10</item>
+        <item name="android:shadowDy">3</item>
+        <item name="android:shadowDx">3</item>
+        <item name="android:shadowColor">@color/faded_white</item>
+    </style>
+
 </resources>

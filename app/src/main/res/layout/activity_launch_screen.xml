@@ -13,7 +13,8 @@
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:text="@string/text_select_language"
-        android:textSize="24sp" />
+        android:textSize="24sp"
+        style="@style/Shadow_Middle_Dark"/>
 
     <RadioGroup
         android:id="@+id/Radio_Group_1"
@@ -28,13 +29,15 @@
             android:id="@+id/Radio_Button_English"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/text_english" />
+            android:text="@string/text_english"
+            style="@style/Shadow_Small_Dark"/>
 
         <RadioButton
             android:id="@+id/Radio_Button_Hungarian"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/text_hungarian" />
+            android:text="@string/text_hungarian"
+            style="@style/Shadow_Small_Dark"/>
 
     </RadioGroup>
 
@@ -45,6 +48,7 @@
         android:layout_below="@id/Radio_Group_1"
         android:layout_centerHorizontal="true"
         android:onClick="whichLanguageSelected"
-        android:text="@string/text_proceed" />
+        android:text="@string/text_proceed"
+        style="@style/Shadow_Small_Dark"/>
 
 </RelativeLayout>

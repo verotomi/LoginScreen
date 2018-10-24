@@ -10,11 +10,9 @@ import android.widget.RadioButton;
 
 import java.util.Locale;
 
-import static android.provider.AlarmClock.EXTRA_MESSAGE;
-
 public class LaunchScreen extends AppCompatActivity {
 
-    public static final String EXTRA_MESSAGE = "package ww.www.www.login_with_pin_code"; //az érték következő activitynek való átadásához kell (jelen esetben a lokalizációhoz)
+    public static final String sentParameters = "package ww.www.www.login_with_pin_code"; //érték következő activitynek való átadásához kell ez a prefix. Értéke az aktuális apckage: ld: 1.sor!
     private Button Button_Select_Language_Proceed;
     private RadioButton Radio_Button_English, Radio_Button_Hungarian;
 
@@ -48,11 +46,10 @@ public class LaunchScreen extends AppCompatActivity {
         Button_Select_Language_Proceed = (Button) findViewById(R.id.Button_Select_Language_Proceed);
         Radio_Button_English = (RadioButton) findViewById(R.id.Radio_Button_English);
         Radio_Button_Hungarian = (RadioButton) findViewById(R.id.Radio_Button_Hungarian);
-
-        setTitle(R.string.app_label);
+        setTitle(R.string.app_label); //App címke átírása/frissítése (lokalizáció miatt kell ide is, nem csak az AndroidManifest-be)
     }
 
-    public void whichLanguageSelected(View view){ // Ez a metódus a Proceed gomb lenyomására meghívódik (ld: activity_launch_screen.xml
+    public void whichLanguageSelected(View view){ // Ez a metódus a Proceed gomb lenyomására meghívódik (ld: activity_launch_screen.xml)
         String selectedLanguage = "";
         if (Radio_Button_English.isChecked()){
             selectedLanguage = "en";
@@ -61,20 +58,16 @@ public class LaunchScreen extends AppCompatActivity {
             selectedLanguage = "hu";
         }
 
-        Locale locale = new Locale(selectedLanguage);
-        Locale.setDefault(locale);
-        Configuration config = getBaseContext().getResources().getConfiguration();
-        config.locale = locale;
-        getBaseContext().getResources().updateConfiguration(config,
-                getBaseContext().getResources().getDisplayMetrics());
+        // Lokalizáció - Applikációnként kell beállítani, nem pedig Activity-nként. Viszont csak egy új Activity elindításakor lép életbe (Többek között újra be kell tölteni a resource/string értékeket.)
+        Locale setLocaleTo = new Locale(selectedLanguage);
+        Locale.setDefault(setLocaleTo);
+        Configuration config = getBaseContext().getResources().getConfiguration(); // kiolvassuk a jelenlegi configot
+        config.locale = setLocaleTo; // a kiolvasott configban módosítjuk a lokalizációt
+        getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics()); // módosítások mentése
 
-        /* Nem váltja át a nyelvet
-        Locale setLocaleTo = new Locale("hu");
-        Configuration app_config = new Configuration();
-        app_config.setLocale(setLocaleTo);*/
-
-        Intent intent = new Intent(this, MainActivity.class);
-        intent.putExtra(EXTRA_MESSAGE, selectedLanguage); // nem is kell átadni a lokalizáció választást, meg lehet oldani a kezdőlapon is. Ettől függetlenül itt hagyom, hátha jó lesz még valamire.
-        startActivity(intent);
+        // Új Activity
+        Intent intent = new Intent(this, MainActivity.class); // új Activity példányosítása
+        intent.putExtra(sentParameters, selectedLanguage); // kulcs-érték páros átadása. Jelen esetben nincs rá szükség, meg lehet oldani a kezdőlapon is. Ettől függetlenül itt hagyom, hátha jó lesz még valamire.
+        startActivity(intent); // Új Activity elindítása
     }
 }

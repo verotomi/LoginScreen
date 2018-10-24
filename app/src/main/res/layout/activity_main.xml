@@ -16,10 +16,7 @@
         android:textStyle="bold"
         android:layout_marginTop="12dp"
         android:layout_marginBottom="12dp"
-        android:shadowColor="#444444"
-        android:shadowDx="1"
-        android:shadowDy="1"
-        android:shadowRadius="2"/>
+        style="@style/Shadow_Middle_Dark"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -27,7 +24,8 @@
         android:layout_below="@id/Text_View_Enter_PIN_Code"
         android:layout_centerHorizontal="true"
         android:text=""
-        android:textSize="24sp"/>
+        android:textSize="24sp"
+        style="@style/Shadow_Small_Dark"/>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -136,7 +134,9 @@
         android:gravity="center_horizontal"
         android:layout_below="@id/Linear_layout_4"
         android:layout_marginTop="15dp"
-        android:layout_marginBottom="15dp"/>
+        android:layout_marginBottom="15dp"
+        android:textColor="@color/Red"
+        style="@style/Shadow_Small_Dark"/>
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -146,7 +146,8 @@
         android:visibility="invisible"
         android:layout_below="@id/Text_View_Dialogue"
         android:background="@drawable/roundedbutton_red"
-        android:textColor="@color/white"/>
+        android:textColor="@color/white"
+        style="@style/Shadow_Middle_Light"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -155,5 +156,6 @@
         android:gravity="center_horizontal"
         android:layout_alignParentBottom="true"
         android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"/>
+        android:layout_marginBottom="10dp"
+        style="@style/Shadow_Small_Dark"/>
 </RelativeLayout>

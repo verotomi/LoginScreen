@@ -124,7 +124,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/Button_enter"
             android:text="@string/text_enter"
-            style="@style/Buttons_Numeric"/>
+            style="@style/Buttons_Numeric" />
     </LinearLayout>
     <TextView
         android:layout_width="match_parent"

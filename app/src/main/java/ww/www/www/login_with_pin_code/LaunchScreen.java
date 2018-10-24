@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
-
 import java.util.Locale;
 
 public class LaunchScreen extends AppCompatActivity {

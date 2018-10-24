@@ -1,20 +1,13 @@
 package ww.www.www.login_with_pin_code;
 
-import android.app.Activity;
 import android.content.Intent;
-import android.content.res.Configuration;
 import android.os.CountDownTimer;
-import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
-import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -46,19 +39,18 @@ public class MainActivity extends AppCompatActivity {
         Text_View_Stars = (TextView) findViewById(R.id.Text_View_Stars);
         Text_View_Dialogue = (TextView) findViewById(R.id.Text_View_Dialogue);
 
-        setTitle(R.string.app_label);
+        setTitle(R.string.app_label); // cimke frissitése. Lokalizáció miatt kell
     }
 
-    public void banned() {
+    public void banned() { // x db hibás kód utáni letiltás y ideig
         final int waitingTime = getResources().getInteger(R.integer.timeToWait);
         banned = true;
 
-        new CountDownTimer(waitingTime*1000, 1000) {
-
-            public void onTick(long millisUntilFinished) {
+        new CountDownTimer(waitingTime*1000, 1000) { // Visszaszámlálás (absztrakt osztály)
+            public void onTick(long millisUntilFinished) { // meghatározott időközönként végrehajtódik ez a metódus
                 Text_View_Dialogue.setText(getString(R.string.text_wrong_pin_code) + " " + getString(R.string.text_banned_1) + (millisUntilFinished / 1000) + " " + getString(R.string.text_banned_2));
             }
-            public void onFinish() {
+            public void onFinish() { // számláló lejáratakor hajtódik végre
                 Text_View_Dialogue.setText(R.string.text_not_logged_in);
                 banned = false;
             }
@@ -116,8 +108,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Intent intent = getIntent();
-        String selectedLanguage = intent.getStringExtra(LaunchScreen.sentParameters); // végül nem is kell átadni a lokalizáció választást, meg tudom oldani a kezdőlapon is. Ettől függetlenül itt hagyom, hátha jó lesz még valamire.
+        Intent intent = getIntent(); // ezzel indul el ez az Activity
+        String selectedLanguage = intent.getStringExtra(LaunchScreen.sentParameters); // végül nem is kellett átvenni a lokalizáció választást, meg tudom oldani a kezdőlapon is. Ettől függetlenül itt hagyom, hátha jó lesz még valamire.
         init();
 
         // Toast.makeText(this, "Test: pincode variable's length is:" + enteredPincode.length(), Toast.LENGTH_SHORT).show(); // Teszthez kellett!! Csak a változót nem tudtam Toast-olni, elé kellett írni valami stringet!
@@ -236,7 +228,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (loginState == false && enteredPincode.length() > 0 && !banned) {
-                    enteredPincode = enteredPincode.substring(0, enteredPincode.length() - 1);
+                    enteredPincode = enteredPincode.substring(0, enteredPincode.length() - 1); // utolsó bevitt karakter törlése
                     stars = stars.substring(0, stars.length() - 1);
                     Text_View_Stars.setText(stars);
                 }
@@ -293,12 +285,9 @@ public class MainActivity extends AppCompatActivity {
 }
 
 // meg lehetne oldani a 0...9 gombokat generikus kóddal?
-// az enter gombnál az == nem működik, csak az equals!0
+// az enter gombnál az == nem működik, csak az equals! Miért?
 // megcsinálni: "You are logged in" helyett : "Logging in", majd egy új képernyő jelenjen meg (Új activity induljon el??)
-// hogyan lehet átalakítani a gombokat kerekre? oválisra meg tudom csinálni, de kerekre nem
-// árnyékokat szeretnék rakni a gombokon lévő betűk alá
-// a LOG OUT gombot kisbetűsíteni szeretném
+// hogyan lehet átalakítani a gombokat kerekre? oválisra meg tudtam csinálni, de kerekre nem
 // LOG OUT gombot ki szeretném szélesíteni a számgombok széléig
 // a lenyomott gomboknak árnyéka van. Miért?
 // ha visszalépek a kezdőképernyőre, a megfelelő checkbox legyen beállítva
-// kommentelni az utasításokat, hogy mi mit csinál és miért

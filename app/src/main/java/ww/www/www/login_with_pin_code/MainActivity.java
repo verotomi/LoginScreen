@@ -3,6 +3,7 @@ package ww.www.www.login_with_pin_code;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.CountDownTimer;
+import android.os.Vibrator;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -104,6 +105,11 @@ public class MainActivity extends AppCompatActivity {
         }*/
     }
 
+    public void vibrateForXMillisec(int milliSec){
+        Vibrator v = (Vibrator) getSystemService(MainActivity.VIBRATOR_SERVICE);
+        v.vibrate(milliSec);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR_PORTRAIT);
@@ -119,6 +125,7 @@ public class MainActivity extends AppCompatActivity {
         Button_1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                vibrateForXMillisec(15);
                 if (loginState == false && enteredPincode.length() < 6 && !banned) {
                     enteredPincode += "1";
                     stars += "*";
@@ -130,6 +137,7 @@ public class MainActivity extends AppCompatActivity {
         Button_2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                vibrateForXMillisec(15);
                 if (loginState == false && enteredPincode.length() < 6 && !banned) {
                     enteredPincode += "2";
                     stars += "*";
@@ -141,6 +149,7 @@ public class MainActivity extends AppCompatActivity {
         Button_3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                vibrateForXMillisec(15);
                 if (loginState == false && enteredPincode.length() < 6 && !banned) {
                     enteredPincode += "3";
                     stars += "*";
@@ -152,6 +161,7 @@ public class MainActivity extends AppCompatActivity {
         Button_4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                vibrateForXMillisec(15);
                 if (loginState == false && enteredPincode.length() < 6 && !banned) {
                     enteredPincode += "4";
                     stars += "*";
@@ -163,6 +173,7 @@ public class MainActivity extends AppCompatActivity {
         Button_5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                vibrateForXMillisec(15);
                 if (loginState == false && enteredPincode.length() < 6 && !banned) {
                     enteredPincode += "5";
                     stars += "*";
@@ -174,6 +185,7 @@ public class MainActivity extends AppCompatActivity {
         Button_6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                vibrateForXMillisec(15);
                 if (loginState == false && enteredPincode.length() < 6 && !banned) {
                     enteredPincode += "6";
                     stars += "*";
@@ -185,6 +197,7 @@ public class MainActivity extends AppCompatActivity {
         Button_7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                vibrateForXMillisec(15);
                 if (loginState == false && enteredPincode.length() < 6 && !banned) {
                     enteredPincode += "7";
                     stars += "*";
@@ -196,6 +209,7 @@ public class MainActivity extends AppCompatActivity {
         Button_8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                vibrateForXMillisec(15);
                 if (loginState == false && enteredPincode.length() < 6 && !banned) {
                     enteredPincode += "8";
                     stars += "*";
@@ -207,6 +221,7 @@ public class MainActivity extends AppCompatActivity {
         Button_9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                vibrateForXMillisec(15);
                 if (loginState == false && enteredPincode.length() < 6 && !banned) {
                     enteredPincode += "9";
                     stars += "*";
@@ -218,6 +233,7 @@ public class MainActivity extends AppCompatActivity {
         Button_0.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                vibrateForXMillisec(15);
                 if (loginState == false && enteredPincode.length() < 6 && !banned) {
                     enteredPincode += "0";
                     stars += "*";
@@ -229,6 +245,7 @@ public class MainActivity extends AppCompatActivity {
         Button_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                vibrateForXMillisec(15);
                 if (loginState == false && enteredPincode.length() > 0 && !banned) {
                     enteredPincode = enteredPincode.substring(0, enteredPincode.length() - 1); // utolsó bevitt karakter törlése
                     stars = stars.substring(0, stars.length() - 1);
@@ -239,6 +256,7 @@ public class MainActivity extends AppCompatActivity {
         Button_enter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                vibrateForXMillisec(15);
                 if (!banned) {
                     if (enteredPincode.length() >= 4) { // 6--nál nagyobb nem lehet, ld: számgombok
                         if (enteredPincode.equals(storedPincode)) { // itt eredetileg ==-t írtam, de azzal nem működött:(
@@ -275,6 +293,7 @@ public class MainActivity extends AppCompatActivity {
         Button_logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                vibrateForXMillisec(15);
                 if (loginState) {
                     loginState = false;
                     Text_View_Enter_PIN_Code.setVisibility(View.VISIBLE);
